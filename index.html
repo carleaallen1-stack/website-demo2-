@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Quantifai - Intelligence for the Informed Investor. AI-powered market insights and wealth management.">
+    <meta name="keywords" content="investing, AI trading, wealth management, market insights, quantifai">
+    <meta name="author" content="Quantifai">
+    <title>Quantifai - Intelligence for the Informed Investor</title>
+
+    <!-- External CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&amp;family=Manrope:wght@300;400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error-dim": "#9f0519",
+                        "outline": "#68788f",
+                        "on-tertiary-container": "#4a2c00",
+                        "on-tertiary": "#fff0e3",
+                        "secondary-container": "#d8e3fb",
+                        "on-error": "#ffefee",
+                        "error": "#b31b25",
+                        "surface-bright": "#f4f6ff",
+                        "inverse-on-surface": "#8e9eb7",
+                        "on-error-container": "#570008",
+                        "primary-dim": "#0046bb",
+                        "surface-container-low": "#eaf1ff",
+                        "outline-variant": "#9eaec7",
+                        "on-primary": "#f1f2ff",
+                        "tertiary-dim": "#714600",
+                        "secondary": "#515c70",
+                        "on-surface": "#203044",
+                        "secondary-fixed-dim": "#cad5ed",
+                        "secondary-dim": "#455064",
+                        "on-tertiary-fixed-variant": "#563400",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#eff2ff",
+                        "tertiary": "#815100",
+                        "surface-variant": "#c9deff",
+                        "inverse-surface": "#000f21",
+                        "on-primary-fixed-variant": "#00266e",
+                        "on-secondary-fixed-variant": "#515c70",
+                        "primary-container": "#7b9cff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-container-highest": "#c9deff",
+                        "primary-fixed": "#7b9cff",
+                        "on-background": "#203044",
+                        "tertiary-fixed": "#f8a010",
+                        "surface-dim": "#bdd6fc",
+                        "inverse-primary": "#618bff",
+                        "surface": "#f4f6ff",
+                        "surface-tint": "#0050d4",
+                        "secondary-fixed": "#d8e3fb",
+                        "error-container": "#fb5151",
+                        "primary-fixed-dim": "#658eff",
+                        "on-secondary-container": "#475266",
+                        "on-secondary-fixed": "#354053",
+                        "primary": "#0050d4",
+                        "background": "#f4f6ff",
+                        "tertiary-container": "#f8a010",
+                        "surface-container-high": "#d2e4ff",
+                        "on-primary-container": "#001e5a",
+                        "surface-container": "#dce9ff",
+                        "on-primary-fixed": "#000000",
+                        "on-surface-variant": "#4d5d73",
+                        "tertiary-fixed-dim": "#e79400"
+                    },
+                    fontFamily: {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased">
+    <!-- TopNavBar -->
+    <header class="w-full border-b border-slate-100 bg-white sticky top-0 z-50">
+        <div class="flex justify-between items-center px-8 h-14">
+            <div class="text-2xl font-black text-slate-900 font-headline cursor-pointer">Quantifai</div>
+            <nav class="hidden md:flex items-center gap-4 h-full font-plus-jakarta font-semibold">
+                <div class="group h-full">
+                    <button
+                        class="text-blue-700 border-b-2 border-blue-700 h-full flex items-center px-4 hover:bg-slate-50 transition-colors">Dashboard</button>
+                </div>
+                <!-- Solutions Mega Menu Trigger -->
+                <div class="group h-full">
+                    <button
+                        class="text-slate-500 hover:text-primary transition-colors h-full flex items-center px-4 gap-1">
+                        Advisory <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+                    </button>
+                    <!-- Mega Menu Content -->
+                    <div
+                        class="megamenu absolute left-0 right-0 top-14 bg-white border-b border-slate-200 shadow-2xl py-12 px-8">
+                        <div class="max-w-7xl mx-auto grid grid-cols-4 gap-12">
+                            <div class="col-span-1 space-y-6">
+                                <h4 class="text-xs font-black uppercase tracking-widest text-primary">Wealth Management
+                                </h4>
+                                <ul class="space-y-4">
+                                    <li>
+                                        <a class="flex items-center gap-3 group/item" href="#">
+                                            <span
+                                                class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-all">account_balance</span>
+                                            <div>
+                                                <div class="text-sm font-bold text-on-surface">Private Wealth</div>
+                                                <div class="text-xs text-on-surface-variant">Bespoke portfolio
+                                                    strategies</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="flex items-center gap-3 group/item" href="#">
+                                            <span
+                                                class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-all">family_restroom</span>
+                                            <div>
+                                                <div class="text-sm font-bold text-on-surface">Family Office</div>
+                                                <div class="text-xs text-on-surface-variant">Multi-generational planning
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-span-1 space-y-6 border-l border-slate-100 pl-12">
+                                <h4 class="text-xs font-black uppercase tracking-widest text-primary">Trading Edge</h4>
+                                <ul class="space-y-4">
+                                    <li>
+                                        <a class="flex items-center gap-3 group/item" href="#">
+                                            <span
+                                                class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-all">query_stats</span>
+                                            <div>
+                                                <div class="text-sm font-bold text-on-surface">Alpha Engine</div>
+                                                <div class="text-xs text-on-surface-variant">Proprietary signal
+                                                    generation</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="flex items-center gap-3 group/item" href="#">
+                                            <span
+                                                class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-all">shield_with_heart</span>
+                                            <div>
+                                                <div class="text-sm font-bold text-on-surface">Risk Mitigation</div>
+                                                <div class="text-xs text-on-surface-variant">Automated hedging protocols
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-span-2 bg-slate-50 p-8 rounded-2xl flex gap-8">
+                                <div class="flex-1 space-y-4">
+                                    <h4 class="text-lg font-bold font-headline">Latest Advisory Insights</h4>
+                                    <p class="text-sm text-on-surface-variant">How AI is reshaping tax-loss harvesting
+                                        for the 2024 fiscal year.</p>
+                                    <a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all"
+                                        href="#">Read the Report <span
+                                            class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                                </div>
+                                <img alt="Advisory insight" class="w-1/3 rounded-xl object-cover h-full"
+                                    data-alt="Close-up of a high-tech crystal paperweight reflecting digital code on a mahogany desk"
+                                    src="images/image-02.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group h-full">
+                    <button
+                        class="text-slate-500 hover:text-primary transition-colors h-full flex items-center px-4 gap-1">
+                        Markets <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+                    </button>
+                    <!-- Markets Mega Menu -->
+                    <div
+                        class="megamenu absolute left-0 right-0 top-14 bg-white border-b border-slate-200 shadow-2xl py-12 px-8">
+                        <div class="max-w-7xl mx-auto grid grid-cols-4 gap-8">
+                            <div class="space-y-4">
+                                <h4
+                                    class="text-xs font-black uppercase tracking-widest text-primary border-b border-slate-100 pb-2">
+                                    Equities</h4>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <a class="p-2 hover:bg-slate-50 rounded text-sm font-medium" href="#">S&amp;P
+                                        500</a>
+                                    <a class="p-2 hover:bg-slate-50 rounded text-sm font-medium" href="#">Nasdaq 100</a>
+                                    <a class="p-2 hover:bg-slate-50 rounded text-sm font-medium" href="#">Emerging</a>
+                                    <a class="p-2 hover:bg-slate-50 rounded text-sm font-medium" href="#">Small Cap</a>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <h4
+                                    class="text-xs font-black uppercase tracking-widest text-primary border-b border-slate-100 pb-2">
+                                    Alternative</h4>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <a class="p-2 hover:bg-slate-50 rounded text-sm font-medium" href="#">Crypto</a>
+                                    <a class="p-2 hover:bg-slate-50 rounded text-sm font-medium"
+                                        href="#">Commodities</a>
+                                    <a class="p-2 hover:bg-slate-50 rounded text-sm font-medium" href="#">FX Pairs</a>
+                                    <a class="p-2 hover:bg-slate-50 rounded text-sm font-medium"
+                                        href="#">Derivatives</a>
+                                </div>
+                            </div>
+                            <div class="col-span-2 flex flex-col gap-4">
+                                <div class="bg-blue-900 text-white p-6 rounded-2xl flex justify-between items-center">
+                                    <div>
+                                        <div class="text-blue-300 text-xs font-bold uppercase mb-1">Global Sentiment
+                                        </div>
+                                        <div class="text-2xl font-black font-headline">Strong Bullish</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-4xl font-black">+14.2%</div>
+                                        <div class="text-xs text-blue-200">Avg. 30D Signal</div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="p-4 border border-slate-100 rounded-xl flex items-center gap-3">
+                                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                        <div class="text-sm font-bold">Live Data Streaming</div>
+                                    </div>
+                                    <div
+                                        class="p-4 border border-slate-100 rounded-xl flex items-center gap-3 text-primary">
+                                        <span class="material-symbols-outlined">rocket_launch</span>
+                                        <div class="text-sm font-bold">New: Carbon Markets</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group h-full">
+                    <button
+                        class="text-slate-500 hover:text-primary transition-colors h-full flex items-center px-4">Institutional</button>
+                </div>
+            </nav>
+            <div class="flex items-center gap-4">
+                <div
+                    class="hidden lg:flex items-center bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100 focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+                    <span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+                    <input
+                        class="bg-transparent border-none focus:ring-0 text-sm text-slate-600 placeholder-slate-400 w-32 focus:w-48 transition-all"
+                        placeholder="Search markets..." type="text" />
+                </div>
+                <button
+                    class="text-slate-500 hover:bg-slate-50 p-2 rounded-full transition-all active:scale-95 relative">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+                </button>
+                <button class="text-slate-500 hover:bg-slate-50 p-2 rounded-full transition-all active:scale-95">
+                    <span class="material-symbols-outlined">settings</span>
+                </button>
+                <!-- Hamburger Button -->
+                <button class="md:hidden text-slate-900 p-2 rounded-lg hover:bg-slate-100 transition-colors"
+                    id="menu-toggle">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div class="fixed inset-0 z-[60] bg-white hidden-menu md:hidden flex flex-col" id="mobile-menu">
+            <div class="flex justify-between items-center px-4 h-14 border-b border-slate-100">
+                <div class="text-2xl font-black text-slate-900 font-headline">Quantifai</div>
+                <button class="text-slate-900 p-2" id="menu-close">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto py-8 px-6 space-y-8">
+                <nav class="space-y-6">
+                    <a class="block text-2xl font-bold text-primary font-headline" href="#">Dashboard</a>
+                    <div class="space-y-4">
+                        <div class="text-xs font-black uppercase tracking-widest text-slate-400">Advisory</div>
+                        <div class="grid gap-4 pl-2">
+                            <a class="flex items-center gap-3" href="#">
+                                <span
+                                    class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">account_balance</span>
+                                <span class="font-bold text-on-surface">Private Wealth</span>
+                            </a>
+                            <a class="flex items-center gap-3" href="#">
+                                <span
+                                    class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">family_restroom</span>
+                                <span class="font-bold text-on-surface">Family Office</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-xs font-black uppercase tracking-widest text-slate-400">Markets</div>
+                        <div class="grid grid-cols-2 gap-2 pl-2">
+                            <a class="text-on-surface font-semibold py-2" href="#">Equities</a>
+                            <a class="text-on-surface font-semibold py-2" href="#">Alternatives</a>
+                            <a class="text-on-surface font-semibold py-2" href="#">Crypto</a>
+                            <a class="text-on-surface font-semibold py-2" href="#">FX Pairs</a>
+                        </div>
+                    </div>
+                    <a class="block text-2xl font-bold text-on-surface font-headline" href="#">Institutional</a>
+                </nav>
+                <div class="pt-8 border-t border-slate-100 space-y-4">
+                    <button
+                        class="w-full py-4 hero-gradient text-white font-bold rounded-xl shadow-lg shadow-primary/20">
+                        Start Free Trial
+                    </button>
+                    <button class="w-full py-4 text-primary font-bold border border-primary/20 rounded-xl">
+                        View Live Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden pt-20 pb-32">
+            <div class="absolute inset-0 -z-10 bg-surface-container-low opacity-50"></div>
+            <div
+                class="absolute top-0 right-0 w-1/2 h-full -z-10 opacity-20 blur-3xl hero-gradient rounded-full translate-x-1/2 -translate-y-1/2">
+            </div>
+            <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-primary-container/20 text-primary-dim rounded-full font-label text-xs font-bold tracking-wider uppercase">
+                        <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                        Next Gen AI Trading
+                    </div>
+                    <h1 class="text-6xl font-black font-headline text-on-surface leading-[1.1] tracking-tighter">
+                        Intelligence for the <span class="text-primary">Informed</span> Investor
+                    </h1>
+                    <p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        Quantifai leverages advanced machine learning to synthesize billions of data points into
+                        actionable market signals, giving you an institutional-grade edge.
+                    </p>
+                    <div class="flex items-center gap-4 pt-4">
+                        <button
+                            class="px-8 py-4 hero-gradient text-on-primary font-bold rounded-full shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
+                            Start Free Trial
+                        </button>
+                        <button
+                            class="px-8 py-4 text-primary font-bold flex items-center gap-2 hover:translate-x-1 transition-transform">
+                            View Live Demo <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div
+                        class="absolute -inset-4 bg-white/40 backdrop-blur-3xl rounded-[2.5rem] -z-10 shadow-2xl shadow-blue-900/5">
+                    </div>
+                    <img alt="Financial Dashboard"
+                        class="rounded-[2rem] shadow-2xl border border-white/50 w-full object-cover aspect-video"
+                        data-alt="Modern sleek digital trading interface with abstract neon blue candlestick charts and blurred analytical data overlays in a dark tech style"
+                        src="images/banner.jpg" />
+                </div>
+            </div>
+        </section>
+        <!-- Dashboard Showcase: Bento Grid -->
+        <section class="py-24 bg-surface">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex justify-between items-end mb-16">
+                    <div class="space-y-4">
+                        <h2 class="text-4xl font-black font-headline tracking-tighter">Market Insights</h2>
+                        <p class="text-on-surface-variant max-w-md">Real-time proprietary metrics designed for
+                            professional precision.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button
+                            class="p-3 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors"><span
+                                class="material-symbols-outlined">chevron_left</span></button>
+                        <button
+                            class="p-3 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors"><span
+                                class="material-symbols-outlined">chevron_right</span></button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- Analytics Large Card -->
+                    <div
+                        class="md:col-span-2 md:row-span-2 bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-12">
+                                <span
+                                    class="p-4 bg-primary/10 text-primary rounded-xl material-symbols-outlined">trending_up</span>
+                                <span
+                                    class="text-sm font-label font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+12.4%
+                                    Today</span>
+                            </div>
+                            <h3 class="text-2xl font-bold font-headline mb-4">Volatility Sentiment</h3>
+                            <p class="text-on-surface-variant mb-8">Proprietary AI model tracking global risk factors
+                                across 42 disparate indices.</p>
+                        </div>
+                        <img alt="Analytics Chart" class="rounded-lg w-full h-48 object-cover"
+                            data-alt="Macro close-up of a high-resolution digital chart showing complex line graphs with multiple data points in deep blue and turquoise"
+                            src="images/image-01.jpg" />
+                    </div>
+                    <!-- Market Insights Small Cards -->
+                    <div
+                        class="md:col-span-2 bg-surface-container-high p-8 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-surface-container-highest transition-colors">
+                        <div class="space-y-2">
+                            <p class="text-xs font-label uppercase font-black tracking-widest text-primary">Alpha
+                                Signals</p>
+                            <h3 class="text-xl font-bold font-headline">Institutional Flow</h3>
+                        </div>
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-2 transition-transform text-3xl text-primary">monitoring</span>
+                    </div>
+                    <div class="bg-surface-container p-6 rounded-xl space-y-4">
+                        <h4 class="font-bold text-lg font-headline">Sector Rotation</h4>
+                        <div class="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-3/4"></div>
+                        </div>
+                        <p class="text-sm text-on-surface-variant font-label">Tech Growth: Heavy Buy</p>
+                    </div>
+                    <div class="bg-surface-container p-6 rounded-xl space-y-4">
+                        <h4 class="font-bold text-lg font-headline">Sentiment Index</h4>
+                        <div class="flex items-center gap-2">
+                            <span class="text-3xl font-black text-primary">78</span>
+                            <span class="text-xs font-label text-on-surface-variant">Bullish Momentum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Institutional Section -->
+        <section class="py-24 bg-inverse-surface text-on-primary">
+            <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-24 items-center">
+                <div class="relative order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4 translate-y-8">
+                            <img alt="Security Infrastructure" class="rounded-xl shadow-2xl"
+                                data-alt="Interior of a ultra-modern server room with glowing blue LED lights and fiber optic cables in a secure facility"
+                                src="images/image-02.jpg" />
+                            <div class="bg-primary p-6 rounded-xl">
+                                <span class="material-symbols-outlined text-4xl mb-4"
+                                    data-weight="fill">verified_user</span>
+                                <p class="font-bold text-lg">256-bit AES Encryption</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-blue-900 p-6 rounded-xl">
+                                <span class="material-symbols-outlined text-4xl mb-4" data-weight="fill">hub</span>
+                                <p class="font-bold text-lg">Distributed Ledger</p>
+                            </div>
+                            <img alt="Network Grid" class="rounded-xl shadow-2xl"
+                                data-alt="Digital representation of complex cyber security network nodes glowing in a deep sapphire blue background"
+                                src="images/image-03.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8 order-1 lg:order-2">
+                    <h2 class="text-4xl font-black font-headline tracking-tighter text-white">Fortified for
+                        Institutional Trust</h2>
+                    <p class="text-slate-400 text-lg leading-relaxed">
+                        Security isn't an afterthought—it's our foundation. We employ multi-signature authorization
+                        protocols and cold-storage solutions to ensure your capital remains yours.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-4 text-slate-300">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            SOC 2 Type II Certified
+                        </li>
+                        <li class="flex items-center gap-4 text-slate-300">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            Biometric Multi-Factor Authentication
+                        </li>
+                        <li class="flex items-center gap-4 text-slate-300">
+                            <span class="material-symbols-outlined text-primary">check_circle</span>
+                            24/7 Threat Monitoring and Neutralization
+                        </li>
+                    </ul>
+                    <button
+                        class="px-10 py-4 bg-white text-on-surface font-bold rounded-xl hover:bg-slate-100 transition-colors">
+                        Review Compliance
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Advisory Section -->
+        <section class="py-32 bg-white">
+            <div class="max-w-5xl mx-auto px-8 text-center space-y-16">
+                <div class="space-y-4">
+                    <h2 class="text-4xl font-black font-headline tracking-tighter">Bespoke Wealth Advisory</h2>
+                    <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
+                        High-net-worth management combined with algorithmic efficiency. Our advisors use Quantifai to
+                        craft personalized portfolios.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-12 text-left">
+                    <div class="space-y-4">
+                        <div class="text-primary-container"><span class="material-symbols-outlined text-4xl"
+                                style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span></div>
+                        <h3 class="text-xl font-bold font-headline">Tax-Loss Harvesting</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Automated strategies to minimize your
+                            tax liability while maintaining market exposure.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-primary-container"><span class="material-symbols-outlined text-4xl"
+                                style="font-variation-settings: 'FILL' 1;">diversity_3</span></div>
+                        <h3 class="text-xl font-bold font-headline">Family Office Tools</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Unified reporting and access
+                            management for multi-generational wealth structures.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="text-primary-container"><span class="material-symbols-outlined text-4xl"
+                                style="font-variation-settings: 'FILL' 1;">insights</span></div>
+                        <h3 class="text-xl font-bold font-headline">Predictive Planning</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Scenario modeling based on 50 years
+                            of historical data and future AI projections.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-surface-container-low p-12 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-8 text-left">
+                    <div>
+                        <h4 class="text-2xl font-black font-headline mb-2">Speak with a Strategist</h4>
+                        <p class="text-on-surface-variant">Schedule a complimentary 30-minute portfolio review.</p>
+                    </div>
+                    <button
+                        class="px-8 py-4 bg-primary text-white font-bold rounded-full shadow-lg shadow-primary/30 hover:scale-105 transition-transform whitespace-nowrap">
+                        Book Consultation
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full py-12 bg-surface-container-low">
+        <div class="flex flex-col items-center gap-6 px-8">
+            <div class="text-lg font-bold text-slate-900 font-headline">Quantifai</div>
+            <nav class="flex flex-wrap justify-center gap-8 text-sm font-label font-medium">
+                <a class="text-on-surface-variant hover:underline transition-opacity opacity-80" href="#">Privacy
+                    Policy</a>
+                <a class="text-on-surface-variant hover:underline transition-opacity opacity-80" href="#">Terms of
+                    Flight</a>
+                <a class="text-on-surface-variant hover:underline transition-opacity opacity-80" href="#">Compliance</a>
+                <a class="text-on-surface-variant hover:underline transition-opacity opacity-80" href="#">Press Kit</a>
+            </nav>
+            <div class="pt-8 border-t border-slate-200 w-full max-w-4xl text-center">
+                <p class="text-on-surface-variant text-sm font-label">
+                    © 2026 AeroVision Systems. Free HTML Template by <a href="https://templatesjungle.com/" target="_blank">TemplatesJungle.com</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
